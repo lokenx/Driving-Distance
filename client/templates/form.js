@@ -12,6 +12,11 @@ Template.form.events ({
     var ehrLahr = 1.5;
     var dhrLahr = 1.2;
     var lohrLahr = 1.5;
+    var elhrUcc = 1.1;
+    var dhrUcc = 0.8;
+    var lahrUcc = 0.5;
+    var lohrUcc = 1.2;
+    var ehrUcc = 1.2;
 
     var amt = 0;
     var loc = "";
@@ -108,6 +113,46 @@ Template.form.events ({
             loc = loc + " to " + $('#' + (i + 1)).val();
           }
         };
+        if ((($('#' + i).val() == 'UCC') && ($('#' + (i + 1)).val() == 'Lambton Hall')) || (($('#' + i).val() == 'Lambton Hall') && ($('#' + (i + 1)).val() == 'UCC'))) {
+          amt = amt + lahrUcc;
+          if ($('#' + i).attr('id') == '1') {
+          loc = loc + $('#' + i).val() + " to " + $('#' + (i + 1)).val();
+          } else {
+            loc = loc + " to " + $('#' + (i + 1)).val();
+          }
+        };
+        if ((($('#' + i).val() == 'UCC') && ($('#' + (i + 1)).val() == 'Delaware Hall')) || (($('#' + i).val() == 'Delaware Hall') && ($('#' + (i + 1)).val() == 'UCC'))) {
+          amt = amt + dhrUcc;
+          if ($('#' + i).attr('id') == '1') {
+          loc = loc + $('#' + i).val() + " to " + $('#' + (i + 1)).val();
+          } else {
+            loc = loc + " to " + $('#' + (i + 1)).val();
+          }
+        };
+        if ((($('#' + i).val() == 'UCC') && ($('#' + (i + 1)).val() == 'Elgin Hall')) || (($('#' + i).val() == 'Elgin Hall') && ($('#' + (i + 1)).val() == 'UCC'))) {
+          amt = amt + elhrDhr;
+          if ($('#' + i).attr('id') == '1') {
+          loc = loc + $('#' + i).val() + " to " + $('#' + (i + 1)).val();
+          } else {
+            loc = loc + " to " + $('#' + (i + 1)).val();
+          }
+        };
+        if ((($('#' + i).val() == 'UCC') && ($('#' + (i + 1)).val() == 'Essex Hall')) || (($('#' + i).val() == 'Essex Hall') && ($('#' + (i + 1)).val() == 'UCC'))) {
+          amt = amt + ehrUcc;
+          if ($('#' + i).attr('id') == '1') {
+          loc = loc + $('#' + i).val() + " to " + $('#' + (i + 1)).val();
+          } else {
+            loc = loc + " to " + $('#' + (i + 1)).val();
+          }
+        };
+        if ((($('#' + i).val() == 'UCC') && ($('#' + (i + 1)).val() == 'London Hall')) || (($('#' + i).val() == 'London Hall') && ($('#' + (i + 1)).val() == 'UCC'))) {
+          amt = amt + lohrLahr;
+          if ($('#' + i).attr('id') == '1') {
+          loc = loc + $('#' + i).val() + " to " + $('#' + (i + 1)).val();
+          } else {
+            loc = loc + " to " + $('#' + (i + 1)).val();
+          }
+        };
         
         if (($('#' + i).val()) == ($('#' + (i + 1)).val())) { 
           amt;
@@ -129,7 +174,7 @@ Template.form.events ({
     var nextStop = parseInt(lastStop) + 1;
     nextStop = nextStop.toString();
     lastStop = lastStop.toString();
-    $('<div class="form-group f' + nextStop + '"><label for=' + nextStop + '>Stop ' + lastStop + '</label><select id=' + nextStop + ' class="select form-control"><option disabled selected>---</option><option value="Delaware Hall">Delaware Hall</option><option value="Elgin Hall">Elgin Hall</option><option value="Essex Hall">Essex Hall</option><option value="Lambton Hall">Lambton Hall</option><option value="London Hall">London Hall</option></select></div>').insertAfter(".f" + lastStop);
+    $('<div class="form-group f' + nextStop + '"><label for=' + nextStop + '>Stop ' + lastStop + '</label><select id=' + nextStop + ' class="select form-control"><option disabled selected>---</option><option value="Delaware Hall">Delaware Hall</option><option value="Elgin Hall">Elgin Hall</option><option value="Essex Hall">Essex Hall</option><option value="Lambton Hall">Lambton Hall</option><option value="London Hall">London Hall</option><option value="UCC">UCC</option></select></div>').insertAfter(".f" + lastStop);
     $('#total').text("");
     return false; 
   } else if ($(event.target).prop("id") == "removeStop") {
