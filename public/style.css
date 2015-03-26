@@ -1,3 +1,12 @@
+ul {
+  line-height: 2em;
+  padding-left: 3px;
+}
+
+body {
+  font-size: 15px;
+}
+
 .addStop:hover {
   background-color: #2A7F40;
   color: #fff;
@@ -13,11 +22,12 @@
   color: #fff;
 }
 
-ul {
-  line-height: 2em;
-  padding-left: 3px;
+.btn-info {
+  background-color: #6430A6;
+  border-color: #4f2683;
 }
 
-body {
-  font-size: 15px;
+.btn-info:hover {
+  background-color: #4f2683;
+  border-color: #4f2683;
 }
