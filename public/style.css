@@ -1,0 +1,23 @@
+.addStop:hover {
+  background-color: #2A7F40;
+  color: #fff;
+}
+
+.removeStop:hover {
+  background-color: #AA3939;
+  color: #fff;
+}
+
+.delete:hover {
+  background-color: #AA3939;
+  color: #fff;
+}
+
+ul {
+  line-height: 2em;
+  padding-left: 3px;
+}
+
+body {
+  font-size: 15px;
+}

@@ -1,0 +1,62 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Driving Distance</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>  
+  <div class="container" style="margin-top: 20px">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-2">
+      
+          <h1>Driving Distance &nbsp; <i class="fa fa-car"></i></h1>
+          
+      </div>
+    </div>
+    {{#if currentUser}}
+    <div class="row">
+      <div class="col-md-6 col-md-offset-2">
+        <h2 class="lead">Logged in as {{> loginButtons }} </h2>
+        <br>
+      </div>
+    </div>
+    
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Past Trips</h4>
+                </div>
+                <div class="modal-body">
+                  <ul style="list-style: none;">
+                        {{#each trips}}
+                            {{> trip}}
+                        {{/each}}
+                  </ul>
+                  
+                </div>
+            </div>
+          </div>
+        </div>
+    
+    {{> form}}
+     
+    {{else}}
+    <div class="row">
+      <div class="col-md-6 col-md-offset-2">
+        <h2>{{> loginButtons}}</h2>
+        <br>
+        <h2>Create an account or login above</h2>
+        <p class="lead">Accounts have been reset for new db model.</p>
+        <p>Only requires a username and password, please don't use any of your "real" passwords, it's just for testing purposes. Or, use <kbd>western</kbd> for username and password for demo account.</p>
+        <p>If you break something go yell at Mikhail!</p>
+      </div>
+    </div>
+    {{/if}}
+  </div>  
+</body>

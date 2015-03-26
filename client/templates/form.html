@@ -1,0 +1,56 @@
+<template name="form">
+<div class="row">
+  <form class="form" id="form">
+  <div class="col-md-4 col-md-offset-2">
+    
+    {{#if viewTrips }}
+     
+    {{else}}
+    
+    <div class="form-group f1">
+      <label for="1">Start</label>
+      <select id="1" class="select form-control" >
+        <option value="null" selected>---</option>
+        <option value="Delaware Hall">Delaware Hall</option>
+        <option value="Elgin Hall">Elgin Hall</option>
+        <option value="Essex Hall">Essex Hall</option>
+        <option value="London Hall">London Hall</option>
+      </select>
+    </div>
+    <div class="form-group f2">
+      <label for="2">Stop 1</label>
+      <select id="2" class="select form-control" >
+        <option value="null" selected>---</option>
+        <option value="Delaware Hall">Delaware Hall</option>
+        <option value="Elgin Hall">Elgin Hall</option>
+        <option value="Essex Hall">Essex Hall</option>
+        <option value="London Hall">London Hall</option>
+      </select>
+    </div>    
+    <div class="form-group f3">
+      <label for="3">Stop 2</label>
+      <select id="3" class="select form-control" >
+        <option disabled selected>---</option>
+        <option value="Delaware Hall">Delaware Hall</option>
+        <option value="Elgin Hall">Elgin Hall</option>
+        <option value="Essex Hall">Essex Hall</option>
+        <option value="London Hall">London Hall</option>
+      </select>
+    </div>
+    
+    {{/if}}
+    
+    </div>
+    <div class="col-md-4">
+    <div class="form-group" style="margin-top: 5%">
+      <input type="submit" value="Calculate distance" id="submit" class="btn btn-primary btn-block">
+      <input type="reset" value="Reset fields" id="reset" class="btn btn-warning btn-block" onclick="javascript:$('#total').empty()">
+      <a href="#myModal" role="button" class="btn btn btn-info btn-block" data-toggle="modal">View and edit trips</a>
+      <input type="submit" value="Add a stop" id="addStop" class="btn btn-block btn-default addStop" style="margin-top: 10%">
+      <input type="submit" value="Remove a stop" id="removeStop" class="btn btn-block btn-default removeStop">
+      </div>
+      <h2 id="total" style="text-align: center"></h2>
+    </div>
+  </form>
+  </div>
+</template>
