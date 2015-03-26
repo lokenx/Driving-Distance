@@ -187,6 +187,7 @@ Template.form.events ({
     var lastStop = ($("form select:last").attr("id"));
     if (lastStop > 2) {
       $('.f' + lastStop).remove();
+      $('#total').text("");
       return false;
     } else {
       $('#total').text("You need a Start and one destination...");
