@@ -7,6 +7,10 @@ Template.form.events ({
     var ehrLohr = 0.1;
     var ehrElhr = 1.6;
     var ehrDhr = 1.2;
+    var elhrLahr = 1.7;
+    var ehrLahr = 1.5;
+    var dhrLahr = 1.2;
+    var lohrLahr = 1.5;
 
     var amt = 0;
     var loc = "";
@@ -14,41 +18,103 @@ Template.form.events ({
     if ($(event.target).prop("id") == "submit") {
       
       if ($('#1').val() == 'null') {
-            $('#total').text("Please choose a building for the Start!");
+            $('#total').text("Please choose a building for the Start location!");
+            document.getElementById('total').scrollIntoView({block: "end", behavior: "smooth"});
         } else if ($('#2').val() == 'null') {
-            console.log("hi");
             $('#total').empty();
             $('#total').text("Please choose a building for Stop 1!");
+            document.getElementById('total').scrollIntoView({block: "end", behavior: "smooth"});
         } else {
       for (i=1; i < $('#form :selected').length; i++) {
 
         if ((($('#' + i).val() == 'Elgin Hall') && ($('#' + (i + 1)).val() == 'Delaware Hall')) || (($('#' + i).val() == 'Delaware Hall') && ($('#' + (i + 1)).val() == 'Elgin Hall'))) {
           amt = amt + elhrDhr;
-          loc = loc + $('#' + i).val() + " to " + $('#' + (i + 1)).val() + ", ";
+          if ($('#' + i).attr('id') == '1') {
+          loc = loc + $('#' + i).val() + " to " + $('#' + (i + 1)).val();
+          } else {
+            loc = loc + " to " + $('#' + (i + 1)).val();
+          }
         };
         if ((($('#' + i).val() == 'Elgin Hall') && ($('#' + (i + 1)).val() == 'London Hall')) || (($('#' + i).val() == 'London Hall') && ($('#' + (i + 1)).val() == 'Elgin Hall'))) {
           amt = amt + elhrLohr;
-          loc = loc + $('#' + i).val() + " to " + $('#' + (i + 1)).val() + ", ";
+          if ($('#' + i).attr('id') == '1') {
+          loc = loc + $('#' + i).val() + " to " + $('#' + (i + 1)).val();
+          } else {
+            loc = loc + " to " + $('#' + (i + 1)).val();
+          }
         };
         if ((($('#' + i).val() == 'Delaware Hall') && ($('#' + (i + 1)).val() == 'London Hall')) || (($('#' + i).val() == 'London Hall') && ($('#' + (i + 1)).val() == 'Delaware Hall'))) {
           amt = amt + dhrLohr;
-          loc = loc + $('#' + i).val() + " to " + $('#' + (i + 1)).val() + ", ";
+          if ($('#' + i).attr('id') == '1') {
+          loc = loc + $('#' + i).val() + " to " + $('#' + (i + 1)).val();
+          } else {
+            loc = loc + " to " + $('#' + (i + 1)).val();
+          }
         };
         if ((($('#' + i).val() == 'Essex Hall') && ($('#' + (i + 1)).val() == 'London Hall')) || (($('#' + i).val() == 'London Hall') && ($('#' + (i + 1)).val() == 'Essex Hall'))) {
           amt = amt + ehrLohr;
-          loc = loc + $('#' + i).val() + " to " + $('#' + (i + 1)).val() + ", ";
+          if ($('#' + i).attr('id') == '1') {
+          loc = loc + $('#' + i).val() + " to " + $('#' + (i + 1)).val();
+          } else {
+            loc = loc + " to " + $('#' + (i + 1)).val();
+          }
         };
         if ((($('#' + i).val() == 'Essex Hall') && ($('#' + (i + 1)).val() == 'Elgin Hall')) || (($('#' + i).val() == 'Elgin Hall') && ($('#' + (i + 1)).val() == 'Essex Hall'))) {
           amt = amt + ehrElhr;
-          loc = loc + $('#' + i).val() + " to " + $('#' + (i + 1)).val() + ", ";
+          if ($('#' + i).attr('id') == '1') {
+          loc = loc + $('#' + i).val() + " to " + $('#' + (i + 1)).val();
+          } else {
+            loc = loc + " to " + $('#' + (i + 1)).val();
+          }
         };
         if ((($('#' + i).val() == 'Essex Hall') && ($('#' + (i + 1)).val() == 'Delaware Hall')) || (($('#' + i).val() == 'Delaware Hall') && ($('#' + (i + 1)).val() == 'Essex Hall'))) {
           amt = amt + ehrDhr;
-          loc = loc + $('#' + i).val() + " to " + $('#' + (i + 1)).val() + ", ";
-        };      
+          if ($('#' + i).attr('id') == '1') {
+          loc = loc + $('#' + i).val() + " to " + $('#' + (i + 1)).val();
+          } else {
+            loc = loc + " to " + $('#' + (i + 1)).val();
+          }
+        };
+        if ((($('#' + i).val() == 'Elgin Hall') && ($('#' + (i + 1)).val() == 'Lambton Hall')) || (($('#' + i).val() == 'Lambton Hall') && ($('#' + (i + 1)).val() == 'Elgin Hall'))) {
+          amt = amt + elhrLahr;
+          if ($('#' + i).attr('id') == '1') {
+          loc = loc + $('#' + i).val() + " to " + $('#' + (i + 1)).val();
+          } else {
+            loc = loc + " to " + $('#' + (i + 1)).val();
+          }
+        };
+        if ((($('#' + i).val() == 'Essex Hall') && ($('#' + (i + 1)).val() == 'Lambton Hall')) || (($('#' + i).val() == 'Lambton Hall') && ($('#' + (i + 1)).val() == 'Essex Hall'))) {
+          amt = amt + ehrLahr;
+          if ($('#' + i).attr('id') == '1') {
+          loc = loc + $('#' + i).val() + " to " + $('#' + (i + 1)).val();
+          } else {
+            loc = loc + " to " + $('#' + (i + 1)).val();
+          }
+        };
+        if ((($('#' + i).val() == 'Delware Hall') && ($('#' + (i + 1)).val() == 'Lambton Hall')) || (($('#' + i).val() == 'Lambton Hall') && ($('#' + (i + 1)).val() == 'Delaware Hall'))) {
+          amt = amt + dhrLahr;
+          if ($('#' + i).attr('id') == '1') {
+          loc = loc + $('#' + i).val() + " to " + $('#' + (i + 1)).val();
+          } else {
+            loc = loc + " to " + $('#' + (i + 1)).val();
+          }
+        };
+        if ((($('#' + i).val() == 'London Hall') && ($('#' + (i + 1)).val() == 'Lambton Hall')) || (($('#' + i).val() == 'Lambton Hall') && ($('#' + (i + 1)).val() == 'London Hall'))) {
+          amt = amt + lohrLahr;
+          if ($('#' + i).attr('id') == '1') {
+          loc = loc + $('#' + i).val() + " to " + $('#' + (i + 1)).val();
+          } else {
+            loc = loc + " to " + $('#' + (i + 1)).val();
+          }
+        };
+        
         if (($('#' + i).val()) == ($('#' + (i + 1)).val())) { 
           amt;
-          loc = loc + $('#' + i).val() + " to " + $('#' + (i + 1)).val() + ", ";
+          if ($('#' + i).attr('id') == '1') {
+          loc = loc + $('#' + i).val() + " to " + $('#' + (i + 1)).val();
+          } else {
+            loc = loc + " to " + $('#' + (i + 1)).val();
+          }
         };
       }
  
@@ -62,7 +128,7 @@ Template.form.events ({
     var nextStop = parseInt(lastStop) + 1;
     nextStop = nextStop.toString();
     lastStop = lastStop.toString();
-    $('<div class="form-group f' + nextStop + '"><label for=' + nextStop + '>Stop ' + lastStop + '</label><select id=' + nextStop + ' class="select form-control"><option disabled selected>---</option><option value="Delaware Hall">Delaware Hall</option><option value="Elgin Hall">Elgin Hall</option><option value="Essex Hall">Essex Hall</option><option value="London Hall">London Hall</option></select></div>').insertAfter(".f" + lastStop);
+    $('<div class="form-group f' + nextStop + '"><label for=' + nextStop + '>Stop ' + lastStop + '</label><select id=' + nextStop + ' class="select form-control"><option disabled selected>---</option><option value="Delaware Hall">Delaware Hall</option><option value="Elgin Hall">Elgin Hall</option><option value="Essex Hall">Essex Hall</option><option value="Lambton Hall">Lambton Hall</option><option value="London Hall">London Hall</option></select></div>').insertAfter(".f" + lastStop);
     $('#total').text("");
     return false; 
   } else if ($(event.target).prop("id") == "removeStop") {
