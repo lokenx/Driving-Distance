@@ -1,6 +1,6 @@
 Template.form.events ({
   "click input[type=submit]": function (event) {
-    // Current Buildings: Delaware Hall, Elgin Hall, Essex Hall, Lambton Hall, London Hall
+    // Current Buildings: Delaware Hall, Elgin Hall, Essex Hall, Lambton Hall, London Hall, Ontario Hall, UCC
     
     var elhrLohr = 1.6;
     var elhrDhr = 0.4;
