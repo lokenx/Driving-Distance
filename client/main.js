@@ -2,5 +2,7 @@ Accounts.ui.config({
   passwordSignupFields: "USERNAME_ONLY"
 });
 
-Meteor.subscribe("dist");
+Dist = new Mongo.Collection('dist');
+
+Meteor.subscribe('dist');
 

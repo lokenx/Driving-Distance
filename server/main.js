@@ -1,4 +1,9 @@
-Dist = new Mongo.Collection("dist");
+Dist = new Mongo.Collection('dist');
+
+Meteor.publish('dist', function (){
+    var currentUser = this.userId;
+    return Dist.find({owner: currentUser});
+});
 
 Meteor.methods({
     'addTrip': function(amt, loc){
@@ -13,9 +18,4 @@ Meteor.methods({
     'removeTrip': function(id){
       Dist.remove(id);
     }
-});
-
-Meteor.publish('dist', function (){
-  var currentUser = this.userId;
-  return Dist.find({owner: currentUser});
 });
